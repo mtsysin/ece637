@@ -2363,9 +2363,10 @@ static int32_t CheckForCoreFields ( struct IFD *ifd )
        ( WhatAboutCoreField ( ifd, StripOffsets ) == ERROR ) ||
        ( WhatAboutCoreField ( ifd, RowsPerStrip ) == ERROR ) ||
        ( WhatAboutCoreField ( ifd, StripByteCounts ) == ERROR ) ||
-       ( WhatAboutCoreField ( ifd, XResolution ) == ERROR ) ||
-       ( WhatAboutCoreField ( ifd, YResolution ) == ERROR ) ||
-       ( WhatAboutCoreField ( ifd, ResolutionUnit ) == ERROR ) )
+      //  ( WhatAboutCoreField ( ifd, XResolution ) == ERROR ) ||
+      //  ( WhatAboutCoreField ( ifd, YResolution ) == ERROR ) ||
+       ( WhatAboutCoreField ( ifd, ResolutionUnit ) == ERROR 
+       ) )
     return ( ERROR );
 
   return ( NO_ERROR );

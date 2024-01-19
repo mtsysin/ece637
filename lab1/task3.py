@@ -2,8 +2,10 @@ import numpy as np
 from functools import lru_cache
 from PIL import Image
 import matplotlib.pyplot as plt
+import tiffcapture
 
-H, W = 265, 265
+
+H, W = 255, 255
 
 @lru_cache(None)
 def y(i, j):
@@ -13,12 +15,17 @@ def y(i, j):
     
 
 if __name__ == "__main__":
-    h = np.zeros([256, 256])
-    for i in range(256):
-        for j in range(256):
+    h = np.zeros([H, W])
+    for i in range(H):
+        for j in range(W):
             h[i,j] = y(i, j)
-    im_save = Image.fromarray((255*100*h).astype(np.uint8))
-    im_save.save("lab1/h_out.tif")
+    # im_save = Image.fromarray((255*100*h).astype(np.uint8))
+    # im_save.save("lab1/h_iir_out.tif")
+    with tiffcapture.TiffWriter("lab1/h_iir_out.tif") as tif:
+        tif.tags['XResolution'] = 300
+        tif.tags['YResolution'] = 300
+
+        tif.write((255*100*h).astype(np.uint8))
     plt.imshow(h, cmap=plt.cm.gray)
 
     # Theoretical transfer function

@@ -3,14 +3,14 @@ CC = gcc
 CFLAGS = -std=c99 -Wall -pedantic
 BIN = ../bin
 
-all: Example
+all: Lab1
 
 clean:
 	/bin/rm *.o $(BIN)/*
 
 OBJ = tiff.o allocate.o
 
-Example: filter.o $(OBJ) 
-	$(CC) $(CFLAGS) -o Example filter.o $(OBJ) -lm
-	mv Example $(BIN)
+Lab1: filter.o $(OBJ) 
+	$(CC) $(CFLAGS) -o Lab1 filter.o $(OBJ) -lm
+	mv Lab1 $(BIN)
 
