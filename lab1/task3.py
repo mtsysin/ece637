@@ -19,14 +19,14 @@ if __name__ == "__main__":
     for i in range(H):
         for j in range(W):
             h[i,j] = y(i, j)
-    # im_save = Image.fromarray((255*100*h).astype(np.uint8))
-    # im_save.save("lab1/h_iir_out.tif")
-    with tiffcapture.TiffWriter("lab1/h_iir_out.tif") as tif:
-        tif.tags['XResolution'] = 300
-        tif.tags['YResolution'] = 300
+    im_save = Image.fromarray((255*100*h).astype(np.uint8))
+    im_save.save("lab1/h_iir_out.tif")
+    # with tiffcapture.TiffWriter("lab1/h_iir_out.tif") as tif:
+    #     tif.tags['XResolution'] = 300
+    #     tif.tags['YResolution'] = 300
 
-        tif.write((255*100*h).astype(np.uint8))
-    plt.imshow(h, cmap=plt.cm.gray)
+    #     tif.write((255*100*h).astype(np.uint8))
+    # plt.imshow(h, cmap=plt.cm.gray)
 
     # Theoretical transfer function
     def H(mu, nu):
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     ax = fig.add_subplot(111, projection='3d')
     contour = ax.plot_surface(mu, nu, H_mu_nu, cmap='viridis')  # Contour plot with filled regions
     fig.colorbar(contour)  # Add a colorbar for reference
-    ax.set_title('IIR filter')
+    # ax.set_title('IIR filter')
     ax.set_xlabel(r'$\mu$')
     ax.set_ylabel(r'$\nu$')
     ax.set_zlabel(r'$H(\mu, \nu)$')

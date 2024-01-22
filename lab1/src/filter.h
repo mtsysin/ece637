@@ -15,9 +15,7 @@ typedef struct {
 typedef struct {
   int32_t			height;
   int32_t			width;
-  double**          img1;
-  double**          img2;
-  double**          img3;
+  double** img[3];
 } image3_t;
 
 void free_image(image_t image);
@@ -33,4 +31,4 @@ void populate_tiff_from_img3(image3_t* img, struct TIFF_img* color_img);
 void apply_filter(image_t input, image_t filter, image_t output);
 void apply_filter_3(image3_t input, image3_t filter, image3_t output);
 
-#endif
+#endif //_FILTER_H_

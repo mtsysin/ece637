@@ -20,7 +20,7 @@ if __name__ == "__main__":
     ax = fig.add_subplot(111, projection='3d')
     contour = ax.plot_surface(mu, nu, H_mu_nu, cmap='viridis')  # Contour plot with filled regions
     fig.colorbar(contour)  # Add a colorbar for reference
-    ax.set_title('IIR filter')
+    # ax.set_title('FIR low pass filter')
     ax.set_xlabel(r'$\mu$')
     ax.set_ylabel(r'$\nu$')
     ax.set_zlabel(r'$H(\mu, \nu)$')

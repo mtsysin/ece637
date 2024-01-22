@@ -25,7 +25,7 @@ if __name__ == "__main__":
     axH = figH.add_subplot(111, projection='3d')
     contour = axH.plot_surface(mu, nu, np.abs(H_mu_nu), cmap='viridis')  # Contour plot with filled regions
     figH.colorbar(contour)  # Add a colorbar for reference
-    axH.set_title('LPF filter')
+    # axH.set_title('LPF filter')
     axH.set_xlabel(r'$\mu$')
     axH.set_ylabel(r'$\nu$')
     axH.set_zlabel(r'$H(\mu, \nu)$')
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     axG = figG.add_subplot(111, projection='3d')
     contour = axG.plot_surface(mu, nu, np.abs(G_mu_nu), cmap='viridis')  # Contour plot with filled regions
     figG.colorbar(contour)  # Add a colorbar for reference
-    axG.set_title('HPF filter')
+    # axG.set_title('HPF filter')
     axG.set_xlabel(r'$\mu$')
     axG.set_ylabel(r'$\nu$')
     axG.set_zlabel(r'$G(\mu, \nu)$')

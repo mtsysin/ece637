@@ -3,6 +3,7 @@
         "filter.h": "c",
         "assert.h": "c",
         "allocate.h": "c",
-        "tiff.h": "c"
+        "tiff.h": "c",
+        "stdlib.h": "c"
     }
 }
