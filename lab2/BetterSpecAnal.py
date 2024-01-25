@@ -15,9 +15,9 @@ def BetterSpecAnal(x: np.ndarray, N: int, n: int):
         for j in range(n):
             t = W * x[h_begin + i * N: h_begin + (i+1) * N,
                       w_begin + j * N: w_begin + (j+1) * N]
-            res += np.log((1 / N**2) * np.fft.fftshift(np.abs(np.fft.fft2(t) ** 2))) * (1/n**2)
+            res += (1 / N**2) * np.abs(np.fft.fftshift(np.fft.fft2(t) ** 2)) * (1/n**2)
 
-    return res
+    return np.log(res)
 
 if __name__ == "__main__":
 
